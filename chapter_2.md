@@ -20,8 +20,11 @@ alpha * Rn + (1-alpha)(sum(alpha_i * R_i))
 
 sum from i = 1 to i = n - 1
 
+### 2.5 and 2.9:
+See jupyter notebook for this chapter
+
 ### 2.6: 
-Not sure what it simplifies down to but simply replace the step before 2.6 with a bunch of alpha subscripts that has alphan, alphan-1 etc for each corresponding time step. Then depending on how alpha changes, (and if there is a simplifiable relationship between alphan and alphan-1 can possibly simplify.
+This happens when the optimal bandit is hit upon last, receives some good initial rewards, and the other bandits did not pull well. There are no more optimistic bandits to pull and the other bandits will not look as good as the optimal one for a brief period until the optimal bandit's rewards being to outweigh the initial wildly optimistic initial value.
 
 ### 2.7	
 https://en.wikipedia.org/w/index.php?title=Logistic_regression&oldid=755697139#As_a_.22log-linear.22_model
