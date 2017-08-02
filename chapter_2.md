@@ -21,7 +21,7 @@ alpha * Rn + (1-alpha)(sum(alpha_i * R_i))
 sum from i = 1 to i = n - 1
 
 ### 2.5 and 2.8:
-See jupyter notebook for this chapter
+See jupyter notebook for this chapter: https://github.com/AurelianTactics/reinforcement_learning_an_introduction_2nd_edition_exercises/blob/master/chapter_2.ipynb
 
 ### 2.6: 
 This happens when the optimal bandit is hit upon last, receives some good initial rewards, and the other bandits did not pull well. There are no more optimistic bandits to pull and the other bandits will not look as good as the optimal one for a brief period until the optimal bandit's rewards being to outweigh the initial wildly optimistic initial value.
