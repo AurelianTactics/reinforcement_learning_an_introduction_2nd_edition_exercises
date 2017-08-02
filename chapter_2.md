@@ -20,7 +20,7 @@ alpha * Rn + (1-alpha)(sum(alpha_i * R_i))
 
 sum from i = 1 to i = n - 1
 
-### 2.5 and 2.9:
+### 2.5 and 2.8:
 See jupyter notebook for this chapter
 
 ### 2.6: 
@@ -28,3 +28,4 @@ This happens when the optimal bandit is hit upon last, receives some good initia
 
 ### 2.7	
 https://en.wikipedia.org/w/index.php?title=Logistic_regression&oldid=755697139#As_a_.22log-linear.22_model
+
