@@ -14,6 +14,12 @@ Based on figure 2.1, for greedy choice it seems like half the time one of the ne
 
 I'm not sure how to express this mathematically at each time step. After time step 1, 10% of the time. After that, there would be some confidence intervals but I'm uncertain how to get it. If the rewards were deterministic, quantative solution would be able to find. Greedy: 1/10 at t1.  5/10*1/9 at t2. 5/10*4/9*1/8 at t3, etc. e-greedy you use similar math except the e probabilities increase finding the optimal one by e * 1/k at every t (assuming the optimal one has not been chosen).
 
+### 2.4:
+
+alpha * Rn + (1-alpha)(sum(alpha_i * R_i))
+
+sum from i = 1 to i = n - 1
+
 ### 2.6: 
 Not sure what it simplifies down to but simply replace the step before 2.6 with a bunch of alpha subscripts that has alphan, alphan-1 etc for each corresponding time step. Then depending on how alpha changes, (and if there is a simplifiable relationship between alphan and alphan-1 can possibly simplify.
 
