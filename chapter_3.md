@@ -50,34 +50,24 @@ Have to add a term that accounts for the probability of receiving the reward giv
 
 STOPPED HERE 
 
+
+
 # 3.10:
-s	a	s'	r	p(s',r|s,a)
-
-high	search	high	rsearch	alpha
-
-high	search	low	rsearch	1-alpha
-
-high	wait	high	rwait	1
-
-high	wait	low	rwait	0
-
-high	recharge	high	0	0
-
-high	recharge	low	0	0
-
-low	search	deplete	-3	1-beta
-
-low	search	low	rsearch	beta
-
-low	wait	deplete	-3	0
-
-low	wait	low	rwait	1
-
-low	recharge	high	0	1
-
-low	recharge	low	0	0
-
-low 	recharge	deplete	-3	0
+| s | a | s' |	r | p(s',r s,a) |
+| --- | --- | --- | --- | --- |
+|high	|search	|high|	rsearch|	alpha|
+|high	|search|	low|	rsearch|	1-alpha|
+|high	|wait	|high	|rwait|	1|
+|high|	wait|	low	|rwait|	0|
+|high|	recharge|	high|	0|	0|
+|high|	recharge|	low|	0|	0|
+|low|	search	|deplete|	-3|	1-beta|
+|low|	search	|low	|rsearch|	beta|
+|low|	wait	|deplete|	-3|	0|
+|low|	wait	|low	|rwait	|1|
+|low|	recharge|	high|	0|	1|
+|low|	recharge|	low|	0|	0|
+|low |	recharge|	deplete	|-3|	0|
 
 # 3.11:
 change 3.14 from gamma * vpi(s') to gamma * qpi(s',a')
