@@ -48,9 +48,6 @@ In the second case, yes as your current state has all information about prior st
 # 3.9:
 Have to add a term that accounts for the probability of receiving the reward given that the stochastic action was taken, ie the probability that action leads to the state that produces that reward.
 
-STOPPED HERE 
-
-
 
 # 3.10:
 | s | a | s' |	r | p(s',r s,a) |
@@ -70,17 +67,20 @@ STOPPED HERE
 |low |	recharge|	deplete	|-3|	0|
 
 # 3.11:
-change 3.14 from gamma * vpi(s') to gamma * qpi(s',a')
+change (3.14) from gamma * vpi(s') to gamma * qpi(s',a')
 
 # 3.12:
-0.75	
-=0.25 * 2.3 + 0.25 * 0.4 + 0.25 * -0.4 + 0.25 * 0.7
+0.75	= 0.25 * 2.3 + 0.25 * 0.4 + 0.25 * -0.4 + 0.25 * 0.7
 
 # 3.13:
 = Rt+1 + c + g * Rt+2 + g * c + g^2 * Rt+3 + g^2 * c...
+
 = sum(gamma^k * (Rt+k+1) + gamma^k * c)
-= c * 1/(1-gamma) + =0.25 * 2.3 + 0.25 * 0.4 + 0.25 * -0.4 + 0.25 * 0.7
+
+= c * 1/(1-gamma) 
+
 vc = c/(1-gamma)
+
 The intervals in between are the important parts, not the sign.
 
 # 3.14:
@@ -89,9 +89,10 @@ Yes it would have an effect. Like if there was a small negative reward to punish
 # 3.15:
 vpi(s) = sum( Epi[q(a,s)] ) for all s
 
-vpi(s) = pi(a1|s) * qpi(s,a1)+ pi(a2|s) * qpi(s,a2) + pi(a3|s) * qpi(s,a3)
+vpi(s) = pi(a1|s) * qpi(s,a1) + pi(a2|s) * qpi(s,a2) + pi(a3|s) * qpi(s,a3)
 
 # 3.16:
+p(s',r|s,a) = pi(a1|s) * (r1+v(s'1) + pi(a2|s) * (r2+v(s'2) + pi(a3|s) * (r1+v(s'3) 
 
 # 3.17:
 0 at the hole
