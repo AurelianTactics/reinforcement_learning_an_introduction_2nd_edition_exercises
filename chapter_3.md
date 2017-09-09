@@ -182,4 +182,4 @@ pi * = q * (s,a) for all s,a
 ie take the highest optimal-action value at each step
 
 # 3.25:
-wouldn't 3.19 work?
+
