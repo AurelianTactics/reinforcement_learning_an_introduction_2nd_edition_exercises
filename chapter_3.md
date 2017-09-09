@@ -18,19 +18,27 @@ Return would be 0 if the game is solved, -1 otherwise. Successful states are not
 The problem may be too difficult for the robot to solve and thus the robot never sees the rewards. Another issue is that by not giving a small negative reward over time/over movements the robot may never realize that it should be seeking a reward. You have communicated to the agent that hanging around doing nothing and not finding the reward is not a negative activity.
 
 # 3.6:
-Rt+1	gamma	discounted reward	
--1	1	-1	
-2	0.5	1	
-6	0.25	1.5	
-3	0.125	0.375	
-2	0.0625	0.125	
-		2	
+G4 = 2
+
+G3 = 3 + .5 * 2 = 4
+
+G2 = 6 + .5 * 3 + .25 * 4 = 8.5
+
+G1 = 2 + .5 * 6 + .25 * 3 + .125 * 2 = 6
+
 G0 is 2
 
-G4 = 2
-G3 = 3 + .5 * 2 = 4
-G2 = 6 + .5 * 3 + .25 * 4 = 8.5
-G1 = 2 + .5 * 6 + .25 * 3 + .125 * 2 = 6
+Rt+1	gamma	discounted reward	
+
+-1	1	-1	
+
+2	0.5	1	
+
+6	0.25	1.5	
+
+3	0.125	0.375	
+
+2	0.0625	0.125	
 
 # 3.7:
 G1 = 7 * 1/(1-.9) = 70
@@ -48,18 +56,31 @@ STOPPED HERE
 
 # 3.10:
 s	a	s'	r	p(s',r|s,a)
+
 high	search	high	rsearch	alpha
+
 high	search	low	rsearch	1-alpha
+
 high	wait	high	rwait	1
+
 high	wait	low	rwait	0
+
 high	recharge	high	0	0
+
 high	recharge	low	0	0
+
 low	search	deplete	-3	1-beta
+
 low	search	low	rsearch	beta
+
 low	wait	deplete	-3	0
+
 low	wait	low	rwait	1
+
 low	recharge	high	0	1
+
 low	recharge	low	0	0
+
 low 	recharge	deplete	-3	0
 
 # 3.11:
