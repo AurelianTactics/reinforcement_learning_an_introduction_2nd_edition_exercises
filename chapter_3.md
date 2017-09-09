@@ -35,3 +35,59 @@ G1 = 2 + .5 * 6 + .25 * 3 + .125 * 2 = 6
 # 3.7:
 G1 = 7 * 1/(1-.9) = 70
 G0 = 2 + .9 * 70 = 63
+
+# 3.8:
+No, have no information on prior states and no approximation of them. Only have the current state.
+In the second case, yes as your current state has all information about prior states.
+
+# 3.9:
+Have to add a term that accounts for the probability of receiving the reward given that the stochastic action was taken, ie the probability that action leads to the state that produces that reward.
+
+# 3.10:
+s	a	s'	r	p(s',r|s,a)
+high	search	high	rsearch	alpha
+high	search	low	rsearch	1-alpha
+high	wait	high	rwait	1
+high	wait	low	rwait	0
+high	recharge	high	0	0
+high	recharge	low	0	0
+low	search	deplete	-3	1-beta
+low	search	low	rsearch	beta
+low	wait	deplete	-3	0
+low	wait	low	rwait	1
+low	recharge	high	0	1
+low	recharge	low	0	0
+low 	recharge	deplete	-3	0
+
+# 3.11:
+change 3.14 from gamma * vpi(s') to gamma * qpi(s',a')
+
+# 3.12:
+0.75	
+=0.25 * 2.3 + 0.25 * 0.4 + 0.25 * -0.4 + 0.25 * 0.7
+
+# 3.13:
+= Rt+1 + c + g * Rt+2 + g * c + g^2 * Rt+3 + g^2 * c...
+= sum(gamma^k * (Rt+k+1) + gamma^k * c)
+= c * 1/(1-gamma) + =0.25 * 2.3 + 0.25 * 0.4 + 0.25 * -0.4 + 0.25 * 0.7
+vc = c/(1-gamma)
+The intervals in between are the important parts, not the sign.
+
+# 3.14:
+Yes it would have an effect. Like if there was a small negative reward to punish taking too long to finish the maze or taking incorrect steps and a reward of 1 to finish the maze and then 10,000 was added to each reward the maze runner would be incentivised to not finish the maze (and instead collect large reward by being in the maze).
+
+# 3.15:
+vpi(s) = sum( Epi[q(a,s)] ) for all s
+
+vpi(s) = pi(a1|s) * qpi(s,a1)+ pi(a2|s) * qpi(s,a2) + pi(a3|s) * qpi(s,a3)
+
+# 3.16:
+# 3.17:
+# 3.18:
+# 3.19:
+# 3.20:
+# 3.21:
+# 3.22:
+# 3.23:
+# 3.24:
+# 3.25:
