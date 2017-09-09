@@ -43,6 +43,8 @@ In the second case, yes as your current state has all information about prior st
 # 3.9:
 Have to add a term that accounts for the probability of receiving the reward given that the stochastic action was taken, ie the probability that action leads to the state that produces that reward.
 
+STOPPED HERE 
+
 # 3.10:
 s	a	s'	r	p(s',r|s,a)
 high	search	high	rsearch	alpha
@@ -82,12 +84,50 @@ vpi(s) = sum( Epi[q(a,s)] ) for all s
 vpi(s) = pi(a1|s) * qpi(s,a1)+ pi(a2|s) * qpi(s,a2) + pi(a3|s) * qpi(s,a3)
 
 # 3.16:
+
 # 3.17:
+0 at the hole
+-1 on the green
+-2 in larger countour enclosing the green
+-3 in larger countour enclosing the -2 contour. The tee is enclosed in this contour
+
 # 3.18:
+0 at the hole
+-1 on the green
+-2 in contour enclosing the green but not the sand
+-inf in the sand
+-3 in contour enclosing the sand and the -2 contour
+for -4 to -6, these contours enclose the smaller contours until the tee is included in the -6 contour
+
 # 3.19:
+
 # 3.20:
+reward of 10 every 5 steps. Let g = gamma^5. 10 * 1/(1-g)=
+24.4194281
+
 # 3.21:
+for gamma = 0, left is optimal as the +1 reward will be the only reward that is not fully discounted				
+in general,				
+left is	1 + 1 * (1/(1-gamma^2))			
+right is	2 * gamma * (1/(1-gamma^2)			
+				
+left	right	gamma		
+5.263157895	9.473684211	0.9		
+1.333333333	1.333333333	0.5		
+				
+so right is optimal for 0.9 and both are optimal for 0.5				
+				
 # 3.22:
+? given above (3.18)
+v * s = max qpi * (s,a) for a in A(s)
+
 # 3.23:
+q * (s,a) = sum(p(s',r|s,a)[r + gamma * v * (s')]
+sum over s',r
+
 # 3.24:
+pi * = q * (s,a) for all s,a
+ie take the highest optimal-action value at each step
+
 # 3.25:
+wouldn't 3.19 work?
